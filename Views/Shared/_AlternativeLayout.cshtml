@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/main.css" />
+    <link rel="stylesheet" href="~/css/alt.css" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/Home/Index">Home</a></li>
+                    <li><a href="/Home/LayoutDemo">Layout Demo #1</a></li>
+                    <li><a href="/Home/SecondLayoutDemo">Layout Demo #2</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+
+
+        @RenderBody()
+
+        <footer>
+            <p>@DateTime.Now.ToString("ddd d MMM yyyy")</p>
+        </footer>
+        </div>
+
+
+        @RenderSection("MyScripts", required: false)
+
+
+
+
+
+
+
+
+</body>
+</html>
