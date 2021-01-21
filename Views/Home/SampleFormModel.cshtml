@@ -2,13 +2,11 @@
     @model justAPlayMVC.Models.FeedbackForm
     ViewData["Title"] = "Sample Form with Model";
 }
-<h1>@ViewData["Title"] 2</h1>
+<h1>@ViewData["Title"]</h1>
 
 <div class="twoCols">
-    <p>@Model.Username</p>
     <div>
         <form asp-controller="Home" asp-action="SampleFormModel" method="post">
-             Input and Submit elements 
             <div>
                 <label asp-for="Username">Name</label>
                 <input asp-for="Username" placeholder="Please Add Your Name">
