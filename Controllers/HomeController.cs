@@ -67,6 +67,20 @@ namespace justAPlayMVC.Controllers
             return View(model);
         }
 
+        public IActionResult SendParameter(int id)
+        {
+            ViewData["Score"] = id;
+            return View();
+        }
+
+        public IActionResult QueryStringDemo(int price, string size)
+        {
+            // In a Real Project this data would be filtered and/or sanitized
+            ViewData["Price"] = price;
+            ViewData["Size"] = size;
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
