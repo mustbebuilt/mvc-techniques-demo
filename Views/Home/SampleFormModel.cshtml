@@ -1,30 +1,31 @@
 ﻿@{
-    ViewData["Title"] = "Sample Form";
+    @model justAPlayMVC.Models.FeedbackForm
+    ViewData["Title"] = "Sample Form with Model";
 }
 <h1>@ViewData["Title"]</h1>
 
 <div class="twoCols">
     <div>
-        <form asp-controller="Home" asp-action="SampleForm" method="post">
+        <form asp-controller="Home" asp-action="SampleFormModel" method="post">
             <!-- Input and Submit elements -->
             <div>
-                <label for="yourName">Name:</label>
-                <input type="text" name="yourName" id="yourName" placeholder="Please Add Your Name">
+                <label for="Username">Name:</label>
+                <input type="text" name="Username" id="Username" placeholder="Please Add Your Name">
             </div>
             <div>
                 <label>Email:</label>
-                <input type="email" name="email" placeholder="Email Address">
+                <input type="email" name="Email" placeholder="Email Address">
             </div>
             <div>
                 <label>Telephone:</label>
-                <input type="tel" name="tel" placeholder="Telephone Number">
+                <input type="tel" name="Telephone" placeholder="Telephone Number">
             </div>
             <div>
-                <label for="message">Message:</label>
-                <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                <label for="Message">Message:</label>
+                <textarea name="Message" id="Message" placeholder="Your Message"></textarea>
             </div>
             <div>
-                <label for="message">Redirect: <input type="checkbox" name="redirectMe" value="1"/></label>
+                <label>Redirect: <input type="checkbox" name="RedirectMe" value="1" /></label>
             </div>
             <div class="submitContainer">
                 <input type="submit" value="Send">
@@ -33,27 +34,27 @@
     </div>
 
     <div>
-        @if (ViewBag.yourName != null)
+        @if (Model != null)
         {
-        <h2>Submitted Data</h2>
-        <table class="tableData">
-            <tr>
-                <td>Name:</td>
-                <td>@ViewBag.yourName</td>
-            </tr>
-            <tr>
-                <td>Email:</td>
-                <td>@ViewBag.email</td>
-            </tr>
-            <tr>
-                <td>Tel:</td>
-                <td>@ViewBag.tel</td>
-            </tr>
-            <tr>
-                <td>Message:</td>
-                <td>@ViewBag.Message</td>
-            </tr>
-        </table>
+            <h2>Submitted Data</h2>
+            <table class="tableData">
+                <tr>
+                    <td>Name:</td>
+                    <td>@Model.Username</td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>@Model.Email</td>
+                </tr>
+                <tr>
+                    <td>Tel:</td>
+                    <td>@Model.Telephone</td>
+                </tr>
+                <tr>
+                    <td>Message:</td>
+                    <td>@Model.Message</td>
+                </tr>
+            </table>
         }
 
     </div>
