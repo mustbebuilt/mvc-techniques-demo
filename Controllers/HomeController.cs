@@ -54,7 +54,15 @@ namespace justAPlayMVC.Controllers
 
         public IActionResult SampleFormModel()
         {
-            return View();
+            var model = new FeedbackForm
+            {
+                Username = "test",
+                Email = "test",
+                Telephone = "test",
+                Message = "test"
+                //RedirectMe = "1"
+            };
+            return View(model);
         }
 
         [HttpPost]
