@@ -33,6 +33,36 @@ namespace justAPlayMVC.Controllers
             return View();
         }
 
+        public IActionResult SampleForm ()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SampleForm(string Username, string Email, string Telephone, string Message, string RedirectMe)
+        {
+            if(RedirectMe == "1")
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            ViewBag.Username = Username;
+            ViewBag.Email = Email;
+            ViewBag.Telephone = Telephone;
+            ViewBag.Message = Message;
+            return View();
+        }
+
+        public IActionResult SampleFormModel()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SampleFormModel(FeedbackForm model)
+        {
+            return View(model);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
