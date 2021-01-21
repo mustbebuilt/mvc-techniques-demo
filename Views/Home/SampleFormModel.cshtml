@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Sample Form";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="twoCols">
+    <div>
+        <form asp-controller="Home" asp-action="SampleForm" method="post">
+            <!-- Input and Submit elements -->
+            <div>
+                <label for="yourName">Name:</label>
+                <input type="text" name="yourName" id="yourName" placeholder="Please Add Your Name">
+            </div>
+            <div>
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="Email Address">
+            </div>
+            <div>
+                <label>Telephone:</label>
+                <input type="tel" name="tel" placeholder="Telephone Number">
+            </div>
+            <div>
+                <label for="message">Message:</label>
+                <textarea name="message" id="message" placeholder="Your Message"></textarea>
+            </div>
+            <div>
+                <label for="message">Redirect: <input type="checkbox" name="redirectMe" value="1"/></label>
+            </div>
+            <div class="submitContainer">
+                <input type="submit" value="Send">
+            </div>
+        </form>
+    </div>
+
+    <div>
+        @if (ViewBag.yourName != null)
+        {
+        <h2>Submitted Data</h2>
+        <table class="tableData">
+            <tr>
+                <td>Name:</td>
+                <td>@ViewBag.yourName</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>@ViewBag.email</td>
+            </tr>
+            <tr>
+                <td>Tel:</td>
+                <td>@ViewBag.tel</td>
+            </tr>
+            <tr>
+                <td>Message:</td>
+                <td>@ViewBag.Message</td>
+            </tr>
+        </table>
+        }
+
+    </div>
+</div>
