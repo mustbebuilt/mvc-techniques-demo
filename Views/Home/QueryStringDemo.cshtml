@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Query String Demo";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Pass Paramemters in the URL</p>
+
+<ul>
+    <li><a href="~/Home/SendParameter/15">Send a Value of '15'</a></li>
+    <li><a asp-controller="Home" asp-action="SendParameter" asp-route-id="25">Built with a Tag Helper value of 25</a></li>
+    <li><a href="~/Home/QueryStringDemo?price=30&size=large">Send as querystring</a></li>
+</ul>
+<p>Price: @ViewData["Price"]</p>
+<p>Size: @ViewData["Size"]</p>
+
+<div>
+    <form action="" method="get">
+        <div>
+            <label for="Price">Price</label>
+            <input name="Price" id="Price">
+        </div>
+        <div>
+            <label for="Size">Size</label>
+            <input name="Size" id="Size">
+        </div>
+        <div class="submitContainer">
+            <input type="submit" value="Send">
+        </div>
+    </form>
+
+</div>
