@@ -14,16 +14,41 @@ body {
     max-width:1200px;
     margin:auto;
 }
-nav ul{
+nav{
     display:flex;
+}
+nav ul{
     padding-left:0;
     list-style:none;
+    margin-right:20px;
+}
+nav ul li:first-child {
+    color: var(--main-color);
+    font-weight:bold;
+    padding-right: 50px;
 }
 nav ul li a {
-     color: var(--main-color);
-     text-decoration: none;
-     display: inline-block;
-     padding-right: 50px;
+    display:inline;
+    color: var(--main-color);
+    text-decoration:none;
+    border-bottom: 1px dashed var(--main-color);
+}
+nav ul li a:hover {
+    border-bottom: 1px solid var(--main-color);
+}
+.msg {
+    border: 1px solid #000;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 8px;
+    display:inline-block;
+}
+.wishList{
+    border:1px solid #000;
+    border-radius:8px;
+    background-color:#fff;
+    padding:8px;
+    width:300px;
 }
 .twoCols{
     display:flex;
@@ -70,8 +95,8 @@ input[type="submit"] {
 .tableData td {
     padding: 5px;
 }
-
 footer {
+    text-align:center;
     border-top: 1px dashed #cdcdcd;
     position: fixed;
     left: 0px;
