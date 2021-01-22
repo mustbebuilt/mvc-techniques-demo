@@ -4,15 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace justAPlayMVC.ViewComponents
 {
-    public class WishListViewComponent : Controller
+    public class WishListViewComponent : ViewComponent
     {
-        // GET: /<controller>/
-        public IActionResult Index()
+        const string WishListFilim = "Star Wars";
+
+        // often asynchronous - example before is synchronous
+        public IViewComponentResult Invoke()
         {
+            ViewBag.WishListFilim = WishListFilim;
             return View();
         }
     }
