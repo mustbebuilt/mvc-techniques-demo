@@ -3,5 +3,15 @@
     ViewData["Title"] = "Model Demo";
 }
 
-<h2>@Model.BookTitle</h2>
-<p>@Model.BookAuthor</p>
+<h2>Data Retrieved from a Model</h2>
+
+<table class="tableData">
+    <tr>
+        <td>BookTitle:</td>
+        <td>@Model.BookTitle</td>
+    </tr>
+    <tr>
+        <td>BookAuthor:</td>
+        <td>@Model.BookAuthor</td>
+    </tr>
+</table>
