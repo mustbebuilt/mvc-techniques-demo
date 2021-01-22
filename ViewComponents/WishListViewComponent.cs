@@ -10,7 +10,7 @@ namespace justAPlayMVC.ViewComponents
     {
         const string WishListFilim = "Star Wars";
 
-        // often asynchronous - example before is synchronous
+        // often asynchronous - example below is synchronous
         public IViewComponentResult Invoke()
         {
             ViewBag.WishListFilim = WishListFilim;
