@@ -67,11 +67,19 @@ namespace justAPlayMVC.Controllers
             return View(model);
         }
 
+        // int version
         public IActionResult SendParameter(int id)
         {
             ViewData["Score"] = id;
             return View();
         }
+
+        // string version
+        //public IActionResult SendParameter(string id)
+        //{
+        //    ViewData["Message"] = id;
+        //    return View();
+        //}
 
         public IActionResult QueryStringDemo(int price, string size)
         {

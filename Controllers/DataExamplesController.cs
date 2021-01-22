@@ -15,12 +15,14 @@ namespace justAPlayMVC.Controllers
         public IActionResult ViewBagDemo()
         {
             ViewBag.Greeting = "Hello";
+            ViewBag.Name = "Fred";
             return View();
         }
 
         public IActionResult ViewDataDemo()
         {
             ViewData["Greeting"] = "Hello";
+            ViewData["Name"] = "Jo";
             return View();
         }
 
