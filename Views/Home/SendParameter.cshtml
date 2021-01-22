@@ -9,18 +9,31 @@
 <div class="twoCols">
 
     <div>
+        <h4>Sending an Integer as a Parameter</h4>
         <ul>
             <li><a href="~/Home/SendParameter/15">Send a Value of '15'</a></li>
             <li><a asp-controller="Home" asp-action="SendParameter" asp-route-id="25">Built with a Tag Helper value of 25</a></li>
-            <li><a href="~/Home/QueryStringDemo?price=30&size=large">Send as querystring</a></li>
         </ul>
-</div>
+        <h4>Sending a String as a Parameter (will need the Controller changing)</h4>
+        <ul>
+            <li><a href="~/Home/SendParameter/MyString">Send a Value of 'MyString'</a></li>
+            <li><a asp-controller="Home" asp-action="SendParameter" asp-route-id="MyString">Built with a Tag Helper value of 'MyString'</a></li>
+        </ul>
+        <h4>Sending a Multiple values in a QueryString</h4>
+        <ul>
+            <li><a href="~/Home/QueryStringDemo?price=30&size=large">Send multiple value as querystring</a></li>
+        </ul>
+    </div>
 
     <div>
-        <table>
+        <table class="tableData">
             <tr>
                 <td>Score</td>
                 <td>@ViewData["Score"]</td>
+            </tr>
+            <tr>
+                <td>Message</td>
+                <td>@ViewData["Message"]</td>
             </tr>
         </table>
     </div>
